@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zanechajte recenziu</title>
+    <style>
+        body, html {
+            height: 100%;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f8f8f8;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+        .container {
+            width: 100%;
+        }
+        .star-rating {
+            direction: rtl;
+            display: inline-flex;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+        .star-rating input[type="radio"] {
+            display: none;
+        }
+        .star-rating label {
+            font-size: 50px;
+            color: #ebebeb;
+            cursor: pointer;
+        }
+        .star-rating input[type="radio"]:checked ~ label,
+        .star-rating label:hover,
+        .star-rating label:hover ~ label {
+            color: #eab934;
+        }
+        button {
+            font-size: 20px;
+            padding: 10px 20px;
+            cursor: pointer;
+            background-color: #eab934;
+            border: none;
+            border-radius: 5px;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Ako by ste ohodnotili svoju skúsenosť?</h2>
+    <div class="star-rating">
+        <input type="radio" id="5-stars" name="rating" value="5" /><label for="5-stars">&#9733;</label>
+        <input type="radio" id="4-stars" name="rating" value="4" /><label for="4-stars">&#9733;</label>
+        <input type="radio" id="3-stars" name="rating" value="3" /><label for="3-stars">&#9733;</label>
+        <input type="radio" id="2-stars" name="rating" value="2" /><label for="2-stars">&#9733;</label>
+        <input type="radio" id="1-star" name="rating" value="1" /><label for="1-star">&#9733;</label>
+    </div>
+    <button id="submit">Odoslať</button>
+</div>
+
+<script>
+document.getElementById('submit').addEventListener('click', function() {
+    var rating = document.querySelector('input[name="rating"]:checked')?.value;
+    if (rating) {
+        if (rating <= 3) { // Redirects if rating is 3 or less
+            window.location.href = 'https://www.trippub.sk/recenzie/';
+        } else {
+            window.location.href = 'https://g.page/r/CUHUY4vDgv8DEB0/review';
+        }
+    } else {
+        alert('Prosím, vyberte hodnotenie.'); // Alert if no rating is selected
+    }
+});
+
+</script>
+
+</body>
+</html>
