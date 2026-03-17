@@ -1,5 +1,0 @@
-{
-  "name": "TriP Street Food Review",
-  "description": "A Google Maps style review interface for TriP street food & Pub.",
-  "requestFramePermissions": ["camera", "geolocation"]
-}
